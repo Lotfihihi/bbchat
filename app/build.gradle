@@ -1,0 +1,36 @@
+plugins {
+    alias(libs.plugins.android.application)
+}
+
+android {
+    namespace 'fr.lotfirais.bbchat'
+    //noinspection GradleDependency
+    compileSdk 18
+
+    defaultConfig {
+        applicationId "fr.lotfirais.bbchat"
+        minSdk 18
+        //noinspection ExpiredTargetSdkVersion
+        targetSdk 18
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "android.test.InstrumentationTestRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    buildFeatures {
+    }
+}
+
+dependencies {
+}

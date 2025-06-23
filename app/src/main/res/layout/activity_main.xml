@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="@color/white">
+
+    <!-- Liste pour afficher les messages -->
+    <RelativeLayout
+        android:id="@+id/topBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="#f6f6f6">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_centerHorizontal="true"
+            android:text="BB Chat" />
+
+        <Button
+            android:id="@+id/settingsButton"
+            android:layout_width="68dp"
+            android:layout_height="46dp"
+            android:layout_alignParentRight="true"
+            android:background="#404040"
+            android:text="Settings"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold" />
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="wrap_content"
+            android:layout_height="2dp"
+            android:layout_alignParentBottom="true"
+            android:background="#0393d4" />
+
+    </RelativeLayout>
+
+    <ListView
+        android:id="@+id/chatListView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/inputLayout"
+        android:layout_below="@id/topBarLayout"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="8dp"
+        android:stackFromBottom="true"
+        android:transcriptMode="alwaysScroll" />
+
+    <!-- Layout pour l'entrée utilisateur et le bouton d'envoi -->
+    <LinearLayout
+        android:id="@+id/inputLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:padding="8dp"
+        android:background="#f6f6f6">
+
+        <EditText
+            android:id="@+id/messageEditText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="8dp"
+            android:layout_weight="1"
+            android:height="48dip"
+            android:background="@android:drawable/editbox_background_normal"
+            android:hint="Write something..."
+            android:inputType="textCapSentences|textMultiLine"
+            android:maxLines="4"
+            android:padding="8dp" />
+
+        <Button
+            android:id="@+id/sendButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#0393d4"
+            android:textColor="@color/white"
+            android:text="Send" />
+    </LinearLayout>
+
+    <!-- Indicateur de chargement (initialement caché) -->
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="gone" />
+
+</RelativeLayout>
